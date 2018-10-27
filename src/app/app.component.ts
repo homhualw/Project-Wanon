@@ -7,6 +7,7 @@ import { SideSchedulePage } from '../pages/side-schedule/side-schedule';
 import { SidePortfolioPage } from '../pages/side-portfolio/side-portfolio';
 import { SidePaymentPage } from '../pages/side-payment/side-payment';
 import { SideSettingPage } from '../pages/side-setting/side-setting';
+import { LoginPage } from '../pages/login/login';
 
 
 
@@ -16,9 +17,11 @@ import { SideSettingPage } from '../pages/side-setting/side-setting';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+  //ตั้งค้่าหน้าแรกที่จะแสดง //โดยไปที่หน้าhomeก่อนแล้วไปดักเอาข้อมูลด้านล่าง
+  // rootPage: any = LoginPage;
   rootPage: any = TabsPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -30,9 +33,7 @@ export class MyApp {
       { title: 'จ่ายเงิน', component: SidePaymentPage },
       { title: 'ตั้งค่า', component: SideSettingPage }
 
-
     ];
-
   }
 
   initializeApp() {
@@ -41,6 +42,14 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      //ตรวจว่ามีข้อมูลในlocal storageไหม มีข้อมูลloginไหม
+      if (localStorage.getItem("userLogin") == null) {
+        this.rootPage= LoginPage;
+      } else {
+        this.rootPage= TabsPage;
+      }
+
     });
   }
 

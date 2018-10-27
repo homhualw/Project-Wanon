@@ -1,0 +1,19 @@
+<ion-content padding>
+  <h1 text-center>เข้าสู่ระบบ</h1>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="userData.username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="userData.password"(keypress)
+      ="onChange($event.keyCode)"></ion-input>
+    </ion-item>
+    <button ion-button block (click)="loginProcess()">เข้าสู่ระบบ</button>
+    <p text-center>สมัครสมาชิกใหม่ <a href="#" (click)="regiSter()">ที่นี่</a></p>
+
+  </ion-list>
+</ion-content>
