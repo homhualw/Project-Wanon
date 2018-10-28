@@ -14,7 +14,7 @@ export class WebapiServiceProvider {
   baseURLAPI: any;
 
   constructor(public http: Http) {
-    this.baseURLAPI = "http://192.168.131.59/dbionic01_connect/";
+    this.baseURLAPI = "http://localhost/dbionic01_connect/";
   }
   //Post Method
   postData(objData, segment) {

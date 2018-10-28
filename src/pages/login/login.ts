@@ -71,7 +71,7 @@ export class LoginPage {
         let alert = this.alertCtrl.create({
           //title: 'สถานะเข้าระบบ',
           //subTitle: 'ป้อนข้อมูลไม่ถูกต้อง',
-          message: "<center><img src='assets/imgs/logo.png' width='100'><p style='margin-top:0px'>กรอกข้อมูลใหม่</p></center>'",
+          message: "<center><img src='assets/imgs/error.jpg' width='100'><p style='margin-top:0px'>กรอกข้อมูลใหม่</p></center>'",
           buttons: ['ปิดหน้าต่าง']
         });
         alert.present();

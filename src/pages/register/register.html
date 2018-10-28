@@ -4,26 +4,26 @@
 
     <ion-item>
       <ion-label floating>Username</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="userData.username"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Fullname</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="userData.fullname"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>email</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="userData.email"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating>tel.</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label floating>phone.</ion-label>
+      <ion-input type="text" [(ngModel)]="userData.tel"></ion-input>
     </ion-item>
-    <button ion-button block>สมัครสมาชิก</button>
+    <button ion-button block (click)="reGisterss()">สมัครสมาชิก</button>
     <p text-center>สมาชิกลงชื่อเข้าใช้ <a href="#" (click)="loginss()">ที่นี่</a></p>
 
   </ion-list>
